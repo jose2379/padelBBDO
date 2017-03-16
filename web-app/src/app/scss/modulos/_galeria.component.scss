@@ -1,0 +1,126 @@
+.galeriaSlide {
+  //@include gradient-x(red, yellow);
+  .carousel-indicators{
+    background-color: yellow;
+  }
+  carousel{
+    background-color: yellow;
+    > * {
+      background-color: black;
+    }
+    slide{
+      justify-content: center;
+      height: 93.5vh;
+      .obra {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .carousel-caption {
+          bottom: inherit;
+          top: 0;
+          //color: $colorPrincipal-ligther;
+          text-shadow: 0 1px 2px $colorPrincipal-dark;
+        }
+        img {
+          max-height: 80vh;
+          @media (max-width: 768px){
+            max-height: 60vh;
+            max-width: 90vw;
+          }
+        }
+      }
+    }
+    .carousel-control {
+      background-color: yellow;
+      text-align: center;
+      background-color: red;
+      background-image: none;
+    }
+  }
+  .carousel-control-prev{
+    background-color: darkred;
+  }
+}
+/*.swiper-container {
+  width: 500px;
+  height: 300px;
+  margin: 20px auto;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  !* Center slide text vertically *!
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}*/
+/*.panel-body{
+  background:#ededed;
+  background:-webkit-gradient(linear, left top, left bottom,color-stop(0%, #f4f4f4), color-stop(100%, #ededed));
+  background:-moz-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
+  background:-ms-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
+  min-height: 75%;
+  min-height: 75vh;
+  text-align: -webkit-center;
+  !*float: none;*!
+  !* position: relative; *!
+  display: table;
+  width: 100%;
+  .celda{
+    display: table-cell;
+    vertical-align: middle;
+    img{
+      max-height: 70vh;
+    }
+  }
+}
+.panel-textoBoton{
+  font-size: 2.3vh;
+  color: #fff;
+
+  small{
+    color: #aaa;
+    display: block;
+    text-align: right;
+  }
+}
+.panel-footer{
+  height: 40px;
+  vertical-align: middle;
+  display: table;
+  width: 100%;
+  .navbar{
+    margin-bottom: 0px;
+    min-height: 0;
+    right: 8px;
+  }
+  h5{
+    text-align: center;
+    color: lightgray;
+  }
+}*/
+
+
+/*
+panel-body {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.jumbotron {
+  display: table-cell;
+  vertical-align: middle;
+}*/

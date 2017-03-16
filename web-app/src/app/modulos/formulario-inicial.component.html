@@ -1,0 +1,16 @@
+<section class="formBolaSaque">
+  <form class="card" [formGroup]="formularioInicio"
+        (submit)="actualizarObraFirebase()"
+        (reset)="limpiaForm()">
+    <div class="card-header"><h2>{{ tituloCard }}</h2></div>
+    <div class="card-body">
+      <label for="email" class="col-form-label text-right">Titulo</label>
+      <input type="email" id="email" class="form-control" name="email" formControlName="email">
+    </div>
+    <div class="card-footer">
+      <h1 class="btn btn-success">
+        {{textoBoton}}
+      </h1>
+    </div>
+  </form>
+</section>

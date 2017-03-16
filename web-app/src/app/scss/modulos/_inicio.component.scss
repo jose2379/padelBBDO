@@ -1,0 +1,54 @@
+.inicio{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-top: $separacion-general;
+  .bloqueTexto{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 3 0px;
+    margin-right: 2rem;
+    h1{
+      display: flex;
+      flex-direction: column;
+      line-height: 3rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 0.1rem solid $colorPrincipal-ligth;
+      padding-bottom: 0.8rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        small{
+          font-size: 0.5em;
+        }
+      }
+      @media (max-width: 576px) {
+        font-size: 1.8rem;
+        small{
+          font-size: 0.4em;
+        }
+      }
+    }
+    hr{
+      border-color: $colorPrincipal-ligth;
+    }
+  }
+  .bloqueImagen{
+    display: flex;
+    align-items: center;
+    flex: 1 0px;
+    justify-content: center;
+  }
+  @media (max-width: 992px) {
+    flex-direction: column;
+    text-align: justify;
+    > [class^='bloque'] {
+      flex: inherit;
+      margin-right: 0;
+      img{
+        max-width: 50%;
+      }
+    }
+  }
+}

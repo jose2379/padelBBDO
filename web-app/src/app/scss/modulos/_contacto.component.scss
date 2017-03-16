@@ -1,0 +1,19 @@
+.contacto{
+  padding-top: $separacion-general;
+  h4{
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+  .salidas{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a{
+      display: flex;
+      align-items: flex-start;
+      img{
+        max-height: 4rem;
+      }
+    }
+  }
+}

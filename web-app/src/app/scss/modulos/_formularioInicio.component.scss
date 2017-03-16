@@ -1,0 +1,32 @@
+.formBolaSaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  @include gradient-radial($colorPrincipal-dark, $colorPrincipal-ligthest);
+  .card{
+    width: 50%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: initial;
+    border: 0.4rem solid white;
+    background-color: $colorPrincipal-ligthest;
+    border-radius: 3rem 1rem 5rem;
+    overflow: hidden;
+    .card-header{
+      display: flex;
+      align-items: center;
+      background-color: $colorPrincipal-dark;
+      border: none;
+      color: $colorSecundario-ligthest;
+      font-weight: 600;
+    }
+    .card-body{
+      margin: 3rem;
+      color: $colorPrincipal-dark;
+    }
+
+  }
+}
