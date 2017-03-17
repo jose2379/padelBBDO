@@ -1,0 +1,33 @@
+form {
+  &.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: initial;
+    border: 0.4rem solid white;
+    background-color: $colorFondoGeneral;
+    border-radius: 2rem 1rem;
+    overflow: hidden;
+    .card-header{
+      display: flex;
+      align-items: center;
+      background-color: $colorPrincipal-dark;
+      border: none;
+      color: $colorSecundario-ligthest;
+      font-weight: 600;
+    }
+    .card-body{
+      margin: 3rem;
+      color: $colorPrincipal-dark;
+      font-weight: 600;
+    }
+    .card-footer{
+      display: flex;
+      justify-content: flex-end;
+      padding: 0.3rem 1rem;
+      background-color: lightgray;
+      border: none;
+      //background-color: $colorPrincipal-ligth;
+    }
+  }
+}

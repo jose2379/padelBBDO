@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router'
 
-import { FormularioInicialComponent } from './modulos/formulario-inicial.component'
+import { FormularioInicialComponent } from './modulos/formulario-inicial/formulario-inicial.component'
+import { NormasJuegoComponent } from './modulos/normas-juego/normas-juego.component'
 // import { InicioComponent } from './inicio.component';
 // import { GaleriaComponent } from './galeria.component';
 // import { ContactoComponent } from './contacto.component';
@@ -17,9 +18,9 @@ const appRoutes: Routes = [
     // {
     //     path: 'contacto', component: ContactoComponent
     // },
-    // {
-    //     path: 'dtt', component: DesarrolloComponent
-    // },
+    {
+        path: 'normas-juego', component: NormasJuegoComponent
+    },
     {
         path: '**', component: FormularioInicialComponent
     }

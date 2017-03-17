@@ -1,9 +1,7 @@
-a{
-  //color: $colorFondo-ligth;
-}
-section {
-  //margin-top: $margen-top-general;
-}
+
 body{
-  background-color: $colorSecundario;
+  background-color: $colorFondoGeneral;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
 }
+html *{}

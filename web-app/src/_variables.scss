@@ -1,0 +1,28 @@
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+
+$colorPrincipal: green;
+$colorPrincipal-ligth: lighten($colorPrincipal, 10%);
+$colorPrincipal-ligther: lighten($colorPrincipal, 20%);
+$colorPrincipal-ligthest: lighten($colorPrincipal, 30%);
+$colorPrincipal-dark: darken($colorPrincipal, 10%);
+$colorPrincipal-darker: darken($colorPrincipal, 15%);
+$colorPrincipal-darkest: darken($colorPrincipal, 20%);
+
+$colorSecundario: #ff3333;
+$colorSecundario-ligth: lighten($colorSecundario, 20%);
+$colorSecundario-ligther: lighten($colorSecundario, 40%);
+$colorSecundario-ligthest: lighten($colorSecundario, 60%);
+$colorSecundario-dark: darken($colorSecundario, 10%);
+$colorSecundario-darker: darken($colorSecundario, 15%);
+$colorSecundario-darkest: darken($colorSecundario, 20%);
+
+$colorFondoGeneral: lightgrey;
+
+//Colores boostrap
+$brand-primary: $colorPrincipal;
+$brand-success: lightsteelblue;
+
+$margen-top-general: 5rem;
+$separacion-general: 1.5rem;
+

@@ -1,13 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-  //background-color: $colorPrincipal-ligther;
-  //@include gradient-x(red, yellow);
-}
+@import 'variables';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
 @import url('https://fonts.googleapis.com/css?family=Exo:300,400,600,900');
 
-body{
-  font-family: 'Exo', sans-serif;
-  color: greenyellow;
-  font-size: 16px;
-}
-html *{}
+@import "app/scss/mixins/gradients";
+@import "app/scss/base/estilosGenerales";
+
+@import "app/scss/elementos/formularios";
+
+@import "app/scss/modulos/app.component";
+@import "app/scss/modulos/formularioInicio.component";
