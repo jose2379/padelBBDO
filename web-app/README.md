@@ -26,3 +26,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Bootstrap install
+
+Para que bootstrap carge correctamente se debe instalar
+http://stackoverflow.com/questions/38534276/how-to-use-bootstrap-4-in-angular-2
