@@ -37,7 +37,7 @@ export class FormularioInicialComponent implements OnInit {
     switch (this.estadoRegistro){
       case 'registro':
         this.formularioInicio = new FormGroup({
-          input_1: new FormControl('Introduce@tu.email', Validators.required)
+          fc_email: new FormControl('Introduce@tu.email', Validators.required)
           // ,
           // tecnica: new FormControl(this.obraAEditar.tecnica, Validators.required),
           // dimension: new FormControl(this.obraAEditar.dimension, [Validators.required,
@@ -52,17 +52,20 @@ export class FormularioInicialComponent implements OnInit {
   }
 
   registramosCambios() {
-    console.log('registro', this.formularioInicio.value.input_1);
-    this.usuario = this.listaRegistros.find(usuario => usuario.email == this.formularioInicio.value.input_1);
+    console.log('registro', this.formularioInicio.value.fc_email);
+    this.usuario = this.listaRegistros.find(usuario => usuario.email == this.formularioInicio.value.fc_email);
     if(this.usuario){
       console.log('ya tenemos usuario', this.usuario);
-      this.formularioInicio = new FormGroup({
-        input_1: new FormControl('Introduce tu nombre', Validators.required)
-      });
+      if (!this.usuario.passwork) {
+        this.formularioInicio = new FormGroup({
+          fc_email: new FormControl('Introduce tu contraseña', Validators.required)
+        });
+      }
+
     } else {
       console.log('no tenemos');
       this.usuario = new Usuario();
-      this.usuario.email = this.formularioInicio.value.input_1;
+      this.usuario.email = this.formularioInicio.value.fc_email;
       this.fbServicio.listUser.push(this.usuario);
 
     }
