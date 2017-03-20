@@ -2,7 +2,8 @@
  * Created by josemariaminambresredondo on 18/3/17.
  */
 'use strict'
-
+var fs = require('fs');
+var path = require('path');
 var bcrypt = require('bcrypt-nodejs');
 var User = require('../models/user');
 var jwt = require('../services/jwt');
@@ -32,7 +33,7 @@ function saveUser(req, res) {
             user.password = hash;
             if (user.name != null && user.surname != null && user.email != null) {
                 //guardar usuario
-                user.save((err, userStored) => {
+                user.save(function (err, userStored) {
                     if(err){
                         res.status(500).send({
                             message: 'Error al guardar el usuario'
@@ -109,7 +110,7 @@ function updateUser(req, res) {
     var userId = req.params.id;
     var update = req.body;
 
-    User.findByIdAndUpdate(userId, update, (err, userUpdated) => {
+    User.findByIdAndUpdate(userId, update, function (err, userUpdated) {
         if(err){
             res.status(500).send({
                 message: 'Error al actualizar el usuario'
@@ -126,9 +127,68 @@ function updateUser(req, res) {
     })
 }
 
+function uploadImage(req, res) {
+    var userId = req.params.id;
+    var file_name = 'No subido...';
+
+    console.log('req:', req.files, 'res:', res);
+    if (req.files) {
+        var file_path = req.files.image.path;
+        var file_split = file_path.split('\/');
+        var file_name = file_split[2];
+        console.log('imagen:', file_path, file_split, file_name);
+
+        var file_ext = file_name.split('\.')[1];
+
+        if (file_ext == 'png' || file_ext == 'jpg' || file_ext == 'gif') {
+            User.findByIdAndUpdate(userId, {image: file_name}, function (err, userUpdated) {
+                console.log('err', err, userUpdated)
+                if (!userUpdated) {
+                    res.status(404).send({
+                        message: 'No se ha podido actualizar el usuario'
+                    });
+                } else {
+                    res.status(200).send({user: userUpdated});
+                }
+            });
+        } else {
+            res.status(200).send({
+                message: 'Extensión del archivo no es correcta'
+            });
+        }
+
+        console.log('imagen:', file_ext);
+    } else {
+        res.status(200).send({
+            message: 'La imagen no se ha podido subir'
+        });
+    }
+}
+
+function getImageFile(req, res) {
+    var imageFile = req.params.imageFile;
+
+    var urlFile = './uploads/users/' + imageFile;
+
+    console.log('imge:', urlFile, imageFile);
+
+    fs.exists(urlFile, function (exists) {
+        if (exists) {
+            res.sendfile(path.resolve(urlFile));
+        } else {
+            res.status(404).send({
+                message: 'La imagen no existe'
+            });
+        }
+    })
+
+}
+
 module.exports = {
     pruebas,
     saveUser,
     loginUser,
-    updateUser
+    updateUser,
+    uploadImage,
+    getImageFile
 };
