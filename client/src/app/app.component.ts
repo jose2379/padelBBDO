@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   public identity;
   public token;
   public errorMessage;
-  public alertRegister;
+  public alertMessage;
 
   constructor(private _userService: UserService) {
     this.user = new User('', '', '', '', '', 'ROLE_USER', '');
@@ -99,9 +99,9 @@ export class AppComponent implements OnInit {
         this.user_register = user;
 
         if (!user._id) {
-          this.alertRegister = 'Error al registrase';
+          this.alertMessage = 'Error al registrase';
         } else {
-          this.alertRegister = 'El registro se ha realizado conrrectamente, identificate con ' + this.user_register.email;
+          this.alertMessage = 'El registro se ha realizado conrrectamente, identificate con ' + this.user_register.email;
           this.user_register = new User('', '', '', '', '', 'ROLE_USER', '');
         }
       }, error => {
@@ -109,7 +109,7 @@ export class AppComponent implements OnInit {
 
         if (errorMessage != null) {
           var body = JSON.parse(error._body);
-          this.alertRegister = body.message;
+          this.alertMessage = body.message;
           console.log(error);
         }
       }
