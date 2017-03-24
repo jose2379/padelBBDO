@@ -1,4 +1,59 @@
-body {
+html, body {
+  margin: 0px;
+  height: 100%;
   background-color: #2b542c;
+}
+
+.head-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.navigation {
+  text-align: center;
   color: white;
+  background-color: #0f0f0f;
+  height: 100%;
+}
+
+.navigation a {
+  color: #ddd;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: white;
+}
+
+.navigation .glyphicon {
+  font-size: 25px;
+  display: block;
+  width: 100%;
+}
+
+#user_logged {
+  background-color: #0f0f0f;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid #444;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#user_logged img {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+.btn_logout {
+  cursor: pointer;
 }

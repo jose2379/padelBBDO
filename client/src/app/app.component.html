@@ -1,37 +1,45 @@
 <div *ngIf="identity" class="navigation col-lg-1">
-  <h1>
+  <h1 class="head-title">
+    <a [routerLink]="['/']">
+      <span class="glyphicon glyphicon-music"></span>
+    </a>
     {{title}}
   </h1>
   <nav id="navigation">
-    <div class="btn btn-info">
+    <a class="">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       Buscar
-    </div>
-    <div class="btn btn-info">
+    </a>
+    <a class="">
       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
       Artistas
-    </div>
-    <div class="btn btn-info">
+    </a>
+    <a class="">
       <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
       Albums
-    </div>
+    </a>
   </nav>
   <nav id="user_logged">
+    <div class="user-image">
+      <img id="image-loaded" src="{{ url + 'get-image-user/' + identity.image }}" class="img-responsive img-circle">
+    </div>
     <div class="alert alert-info" id="identity_name">{{ identity.name }}</div>
-    <div class="btn btn-warning" (click)="logout()">Cerrar Sesión</div>
-    <div [routerLink]="['/mis-datos']" class="btn btn-info">
+    <a [routerLink]="['/mis-datos']" class="">
       <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
       Mis datos
-    </div>
+    </a>
+    <a (click)="logout()" class="btn_logout">
+      <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+      Salir
+    </a>
   </nav>
 </div>
-<div class="clearfix"></div>
+
 <div *ngIf="identity" class="central col-lg-11">
-  <p>Estas logueado en la app</p>
   <router-outlet></router-outlet>
 </div>
 
-<div *ngIf="!identity" class="col-lg-12">
+<div *ngIf="!identity" class="col-lg-11">
   <div class="col-lg-6">
     <h1>Identificate</h1>
     <div *ngIf="errorMessage" class="alert alert-info">
