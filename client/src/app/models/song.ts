@@ -1,7 +1,7 @@
 /**
  * Created by josemariaminambresredondo on 21/3/17.
  */
-export class Artist {
+export class Song {
   constructor(public number: string,
               public name: string,
               public duration: string,

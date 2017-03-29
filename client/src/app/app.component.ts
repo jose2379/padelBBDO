@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "./models/user";
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 import {GLOBAL} from './services/global';
 import {UserService} from './services/user.service';
@@ -19,7 +20,9 @@ export class AppComponent implements OnInit {
   public alertMessage;
   public url: string;
 
-  constructor(private _userService: UserService) {
+  constructor(private _route: ActivatedRoute,
+              private _router: Router,
+              private _userService: UserService) {
     this.user = new User('', '', '', '', '', 'ROLE_USER', '');
     this.user_register = new User('', '', '', '', '', 'ROLE_USER', '');
   }
@@ -91,6 +94,7 @@ export class AppComponent implements OnInit {
     localStorage.clear();
     this.identity = null;
     this.token = null;
+    this._router.navigate(['/']);
   }
 
   onSubmitRegister() {

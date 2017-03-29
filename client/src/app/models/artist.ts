@@ -1,9 +1,9 @@
 /**
  * Created by josemariaminambresredondo on 21/3/17.
  */
-export class User {
+export class Artist {
   constructor(public name: string,
-              public desctription: string,
+              public description: string,
               public image: string) {
   }
 }

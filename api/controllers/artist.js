@@ -11,7 +11,6 @@ var Album = require('../models/album');
 var Song = require('../models/song');
 
 var bcrypt = require('bcrypt-nodejs');
-var User = require('../models/user');
 var jwt = require('../services/jwt');
 
 function getArtist(req, res) {
@@ -29,7 +28,7 @@ function getArtist(req, res) {
                 });
             } else {
                 res.status(200).send({
-                    user: artist
+                    artist: artist
                 });
             }
         }
@@ -57,7 +56,7 @@ function saveArtist(req, res) {
                 });
             } else {
                 res.status(200).send({
-                    user: artistStored
+                    artist: artistStored
                 });
             }
         }
@@ -219,66 +218,6 @@ function getImageFile(req, res) {
     })
 
 }
-
-/*function updateUser(req, res) {
- var userId = req.params.id;
- var update = req.body;
-
- User.findByIdAndUpdate(userId, update, function(err, userUpdated) {
- if(err){
- res.status(500).send({
- message: 'Error al actualizar el usuario'
- });
- } else {
- if(!userUpdated){
- res.status(404).send({
- message: 'No se ha podido actualizar el usuario'
- });
- } else {
- res.status(200).send({ user: userUpdated});
- }
- }
- })
- }
-
- function uploadImage(req, res) {
- var userId = req.params.id;
- var file_name = 'No subido...';
-
- console.log('req:', req.files, 'res:', res);
- if(req.files){
- var file_path = req.files.image.path;
- var file_split = file_path.split('\/');
- var file_name = file_split[2];
- console.log('imagen:', file_path, file_split, file_name);
-
- var file_ext = file_name.split('\.')[1];
-
- if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'gif'){
- User.findByIdAndUpdate(userId, { image: file_name }, function(err, userUpdated){
- console.log('err', err, userUpdated)
- if(!userUpdated){
- res.status(404).send({
- message: 'No se ha podido actualizar el usuario'
- });
- } else {
- res.status(200).send({ user: userUpdated});
- }
- });
- } else {
- res.status(200).send({
- message: 'Extensión del archivo no es correcta'
- });
- }
-
- console.log('imagen:', file_ext);
- } else {
- res.status(200).send({
- message: 'La imagen no se ha podido subir'
- });
- }
- }*/
-
 
 module.exports = {
     getArtist,
