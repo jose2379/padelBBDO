@@ -59,7 +59,7 @@ export class ArtistEditComponent implements OnInit {
               console.log(error);
             }
           }
-        )
+        );
     })
   }
 
@@ -79,12 +79,12 @@ export class ArtistEditComponent implements OnInit {
               this._uploadService.makeFileRequest(this.url + 'upload-image-artist/' + id, [], this.filesToUpload, this.token, 'image')
                 .then(
                   (result) => {
-
+                    this._router.navigate(['/artistas', 1]);
                   },
                   (error) => {
-
+                    console.log('error', error);
                   }
-                )
+                );
               // this.artist = response.artist;
               // this._router.navigate(['/editar-artista'], response.artist._id);
             }

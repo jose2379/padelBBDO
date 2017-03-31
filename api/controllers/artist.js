@@ -67,7 +67,7 @@ function getArtists(req, res) {
     var page = 1;
     if (req.params.page) page = req.params.page;
     else page = 2;
-    var itemsPerPage = 30;
+    var itemsPerPage = 4;
 
     Artist.find().sort('name').paginate(page, itemsPerPage, function (err, artists, total) {
         console.log('dentro', err, artists, total);
