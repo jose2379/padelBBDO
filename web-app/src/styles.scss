@@ -2,11 +2,9 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 @import url('https://fonts.googleapis.com/css?family=Exo:300,400,600,900');
-
-@import "app/scss/mixins/gradients";
-@import "app/scss/base/estilosGenerales";
-
-@import "app/scss/elementos/formularios";
-
-@import "app/scss/modulos/app.component";
-@import "app/scss/modulos/formularioInicio.component";
+@import "assets/scss/mixins/gradients";
+@import "assets/scss/base/estilosGenerales";
+@import "assets/scss/elementos/formularios";
+@import "assets/scss/modulos/app.component";
+@import "assets/scss/modulos/formularioInicio.component";
+@import "assets/scss/modulos/normas-juego.component";

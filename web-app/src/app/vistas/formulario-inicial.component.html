@@ -5,8 +5,12 @@
     <div class="card-header"><h2>{{ tituloCard }}</h2></div>
     <div class="card-body">
       <div class="form-group">
-        <label for="email" class="col-form-label text-right"><h4>{{ labelPrincipal }}</h4></label>
+        <label for="email" class="col-form-label text-right"><h4>{{ labelEmail }}</h4></label>
         <input type="email" id="email" class="form-control" name="email" formControlName="fc_email">
+      </div>
+      <div class="form-group">
+        <label for="password" class="col-form-label text-right"><h4>{{ labelPassword }}</h4></label>
+        <input type="text" id="password" class="form-control" name="password" formControlName="fc_password">
       </div>
     </div>
     <div class="card-footer">

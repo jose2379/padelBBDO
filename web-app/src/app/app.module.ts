@@ -4,11 +4,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { FormularioInicialComponent } from './modulos/formulario-inicial/formulario-inicial.component';
+import {FormularioInicialComponent} from './componentes/formulario-inicial/formulario-inicial.component';
 import {FirebaseService} from "./servicios/firebase.service";
 import {appRoutingProviders, routing} from "./app.routing";
 import {AngularFireModule} from "angularfire2";
-import { NormasJuegoComponent } from './modulos/normas-juego/normas-juego.component';
+import {NormasJuegoComponent} from './componentes/normas-juego/normas-juego.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCg9AklfpP93On-ROBuAA3GvXRfpwPUhIc",

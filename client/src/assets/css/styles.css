@@ -9,6 +9,17 @@ html, body {
   padding-bottom: 4px;
 }
 
+.central {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.seguro {
+  margin-top: -30px;
+  background-color: #0f0f0f;
+  position: absolute;
+}
+
 .head-title {
   font-size: 20px;
   font-weight: bold;
@@ -66,3 +77,54 @@ html, body {
 .artist_image_for_edit img {
   width: 150px;
 }
+
+.artist-list {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 30px;
+  list-style: none;
+}
+
+.artist-item {
+  width: 23%;
+  margin: 20px 0px 0px 20px;
+  padding: 0px;
+  height: 317px;
+  border: 1px solid #444;
+}
+
+.artist-item .artist-image {
+  height: 245px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: #0f0f0f;
+}
+
+.artist-item .artist-image img {
+  height: 100%;
+}
+
+.artist-item .artist-name {
+  color: white;
+  padding: 10px;
+  background-color: #0f0f0f;
+}
+
+.artist-item .artist-name a {
+  color: white;
+}
+
+#artist-head-card .image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  float: left;
+  margin-right: 30px;
+}
+
+#artist-head-card .image img {
+  height: 150px;
+}
+
